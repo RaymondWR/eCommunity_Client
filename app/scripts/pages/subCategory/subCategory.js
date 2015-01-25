@@ -25,7 +25,7 @@ angular.module('communityApp.subCategory', [])
   $ionicPopover) {
 
 
-  $ionicPopover.fromTemplateUrl('scripts/pages/subCategory/popover.tpl.html', {
+  $ionicPopover.fromTemplateUrl('scripts/pages/subCategory/template/popover.tpl.html', {
     scope: $scope,
   }).then(function(popover) {
     $scope.popover = popover;
