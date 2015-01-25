@@ -1,0 +1,26 @@
+{
+  "name": "community",
+  "private": "true",
+  "devDependencies": {
+    "angular": "1.2.26",
+    "lodash": "2.4.1",
+    "ionic": "1.0.0-beta.13",
+    "ngCordova": "latest",
+    "angular-sanitize": "1.2.26",
+    "angular-animate": "1.2.26",
+    "angular-resource": "1.2.26",
+    "angular-mocks": "1.2.26",
+    "angular-scenario": "1.2.26",
+    "angular-local-storage": "latest",
+    "angular-spinner": "latest",
+    "spin.js": "latest",
+    "jquery": "2.1.1",
+    "underscore": "~1.7.0"
+  },
+  "dependencies": {
+    "angular-relative-date": "~0.1.0"
+  },
+  "resolutions": {
+    "angular": "1.2.26"
+  }
+}

@@ -1,0 +1,45 @@
+<ion-view title="Read">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+
+  <ion-content class="has-header" ng-controller="NoteDetailCtrl">
+    <div class="list card">
+
+  <div class="item item-avatar">
+    <h2>Title: {{note.title}}</h2>
+    <p>Category: {{note.category}}</p>
+    <p>Created At: {{note.createdAt | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+    <li class="item item-toggle">
+     Is Private:
+     <label class="toggle toggle-assertive">
+       <input type="checkbox" ng-model="note.isPrivate" ng-disabled="isDisabled">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+   </li>
+
+  </div>
+  <div class="item item-body">
+    <h2>Content:</h2>
+    <pre class="note-content">{{note.content}}</pre>
+  </div>
+
+  <div class="item tabs tabs-secondary tabs-icon-left">
+    <a class="tab-item assertive" ng-click="delete()">
+      <i class="icon ion-trash-a"></i>
+      Delete
+    </a>
+    <a class="tab-item positive" ng-click="update()">
+      <i class="icon ion-edit"></i>
+      Update
+    </a>
+    </a>
+  </div>
+
+</div>
+  </ion-content>
+
+
+</ion-view>

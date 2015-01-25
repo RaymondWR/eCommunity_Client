@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="communityApp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>Community</title>
+
+  <!-- build:css(.tmp) styles/app.css -->
+  <link rel="stylesheet" href="styles/app.css">
+  <!-- endbuild -->
+
+</head>
+
+
+<body ng-controller="CommunityCtrl">
+  <ion-nav-view animation="slide-left-right"></ion-nav-view>
+  <!-- FRAMEWORK/LIB SCRIPTS/angularjs js -->
+  <!-- build:js scripts/lib.min.js -->
+    <script src="bower_components/ionic/release/js/ionic.bundle.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/ngCordova/dist/ng-cordova.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="bower_components/angular-spinner/angular-spinner.min.js"></script>
+    <script src="bower_components/angular-relative-date/angular-relative-date.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/spin.js/spin.js"></script>
+    <script src="bower_components/lodash/dist/lodash.min.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
+  <!-- endbuild -->
+
+
+  <!-- your app's js -->
+  <!-- build:js scripts/app.min.js -->
+  <script src="scripts/pages/home/home.js"></script>
+  <script src="scripts/pages/signin/signin.js"></script>
+  <script src="scripts/pages/login/login.js"></script>
+  <script src="scripts/pages/search/search.js"></script>
+  <script src="scripts/pages/note/note.js"></script>
+  <script src="scripts/pages/read/read.js"></script>
+  <script src="scripts/pages/subCategory/subCategory.js"></script>
+  <script src="scripts/util/apiService.js"></script>
+  <script src="scripts/app.js"></script>
+  <!-- endbuild -->
+</body>
+
+</html>

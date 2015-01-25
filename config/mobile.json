@@ -1,0 +1,7 @@
+{
+  "app_title": "Community",
+  "app_description": "Community",
+  "build_destination": "./cordova/www/",
+  "api": "http://localhost:3000/api/",
+  "mobile": true
+}
