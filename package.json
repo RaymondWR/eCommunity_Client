@@ -25,7 +25,7 @@
     "gulp-replace": "latest",
     "gulp-rev": "latest",
     "gulp-rev-replace": "latest",
-    "gulp-ruby-sass": "latest",
+    "gulp-ruby-sass": "0.7.1",
     "gulp-size": "latest",
     "gulp-template": "latest",
     "gulp-uglify": "latest",

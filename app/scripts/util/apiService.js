@@ -6,7 +6,8 @@ angular.module('communityApp.apiService',[])
   var postNoteURL = url + "/note";
   var noteDetailsURL = url + "/read/";
   var loginURL = url + "/users/session";
-  var getSubCategoryURL = url + "/getSubCategory/"
+  var getSubCategoryURL = url + "/getSubCategory/";
+  var socialusersURL = url + "/socialusers";
   return {
     BASE_URL: url,
     signinURL: signinURL,
@@ -14,6 +15,7 @@ angular.module('communityApp.apiService',[])
     postNoteURL: postNoteURL,
     noteDetailsURL: noteDetailsURL,
     loginURL: loginURL,
-    getSubCategoryURL : getSubCategoryURL
+    getSubCategoryURL : getSubCategoryURL,
+    socialusersURL: socialusersURL
   };
 });

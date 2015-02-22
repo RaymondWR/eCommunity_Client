@@ -15,7 +15,9 @@
     "angular-spinner": "latest",
     "spin.js": "latest",
     "jquery": "2.1.1",
-    "underscore": "~1.7.0"
+    "underscore": "~1.7.0",
+    "firebase":"latest",
+    "angularfire":"latest"
   },
   "dependencies": {
     "angular-relative-date": "~0.1.0"

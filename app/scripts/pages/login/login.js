@@ -35,6 +35,26 @@ angular.module('communityApp.login', ['firebase'])
             console.log("Login Failed!", error);
           } else {
             console.log("Authenticated successfully with payload:", authData);
+
+    var url = CommunityAPIService.socialusersURL;
+    var provideruser = {
+        username:authData.facebook.displayName,
+        fullname:authData.facebook.displayName,
+        provider:authData.provider,
+        providerid:authData.facebook.id,
+        providerdetail:authData.facebook.cachedUserProfile
+    }; 
+    var user = JSON.stringify(provideruser);
+    $http({method: 'POST', url: url, data:user, headers: {'Content-Type': 'application/json'},
+        }).
+      success(function(data, status, headers, config) {
+        
+         localStorageService.set("user", JSON.stringify(data));
+         $location.path('/');
+      }).
+      error(function(data, status, headers, config) {
+        console.log("fail");
+        });
           }
     });
     }
@@ -48,6 +68,24 @@ angular.module('communityApp.login', ['firebase'])
             console.log("Login Failed!", error);
           } else {
             console.log("Authenticated successfully with payload:", authData);
+            var url = CommunityAPIService.socialusersURL;
+    var provideruser = {
+        username:authData.twitter.username,
+        fullname:authData.twitter.displayName,
+        provider:authData.provider,
+        providerid:authData.twitter.id,
+        providerdetail:authData.twitter.cachedUserProfile
+    }; 
+    var user = JSON.stringify(provideruser);
+    $http({method: 'POST', url: url, data:user, headers: {'Content-Type': 'application/json'},
+        }).
+      success(function(data, status, headers, config) {
+       localStorageService.set("user", JSON.stringify(data));
+         $location.path('/');
+      }).
+      error(function(data, status, headers, config) {
+        console.log("fail");
+        });
           }
     });
       }

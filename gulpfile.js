@@ -9,6 +9,7 @@ var del = require('del');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var pagespeed = require('psi');
+var sass = require('gulp-ruby-sass');
 var reload = browserSync.reload;
 
 
@@ -62,10 +63,22 @@ gulp.task('styles', function () {
     .pipe($.rubySass({
       style: 'expanded',
       precision: 10,
+      'sourcemap=none': true,
       loadPath: ['app/styles']
     }))
+    
+   // return gulp.src('src/scss/app.scss')
+   //   .pipe(plugins.sourcemaps.init())
+   //   .pipe(sass('app/styles/app.scss',{
+   //    style: 'expanded',
+   //    precision: 10,
+   //    loadPath: ['app/styles']
+   //  }))
+   //  .pipe(plugins.sourcemaps.write())
+   //  .on('error', function (err) { console.log(err.message); })
     .pipe($.autoprefixer('last 1 version'))
     .pipe(gulp.dest('.tmp/styles'))
+    .pipe(reload({stream:true}))
     .pipe($.size());
 });
 
