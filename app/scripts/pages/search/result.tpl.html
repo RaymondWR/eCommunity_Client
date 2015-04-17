@@ -1,14 +1,12 @@
-<ion-view title="Read">
+<ion-view title="Search Result">
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
 
-  <ion-content class="has-header" ng-controller="ReadCtrl">
+  <ion-content class="has-header" ng-controller="ResultCtrl">
     <div class="list">
 
-        <div class="item item-divider">
-          Note
-        </div>
+        <div class="item item-divider">Found Notes</div>
 
         <a class="item" ng-repeat="note in notes" ng-click="readDetail(note)">
           {{note.title}}

@@ -19,6 +19,15 @@ angular.module('communityApp.read', [])
         templateUrl: 'scripts/pages/read/notedetail.tpl.html'
       }
     }
+  })
+  .state('app.noteupdate', {
+    url: '/noteupdate',
+    views: {
+      'menuContent': {
+        controller: 'NoteUpdateCtrl',
+        templateUrl: 'scripts/pages/read/noteupdate.tpl.html'
+      }
+    }
   });
 })
 
@@ -65,6 +74,7 @@ angular.module('communityApp.read', [])
   CommunityAPIService) {
   var user = localStorageService.get("user");
   $scope.note = localStorageService.get("note");
+
   $scope.delete = function(){
     var url = CommunityAPIService.noteDetailsURL + $scope.note._id;
     $http({method: 'DELETE', url: url, headers: {'Content-Type': 'application/x-www-form-urlencoded'},
@@ -77,7 +87,45 @@ angular.module('communityApp.read', [])
       error(function(data, status, headers, config) {
         console.log("fail");
         });
-
   };
+
+  $scope.update = function(note){
+    console.log(note);
+    localStorageService.set("note", note);
+    $location.path('/noteupdate');
+  }
+})
+.controller('NoteUpdateCtrl', function($scope,
+  $http,
+  usSpinnerService,
+  $rootScope,
+  $ionicPlatform,
+  $ionicPopup,
+  localStorageService,
+  $location,
+  $resource,
+  CommunityAPIService) {
+  $scope.note = localStorageService.get("note");
+  $scope.postNote= function() {
+
+    var updateNote = {
+        category:$scope.note.category,
+        isPrivate: $scope.note.isPrivate,
+        title:$scope.note.title,
+        content:$scope.note.content
+    };
+    var jdata = 'mydata='+JSON.stringify(updateNote);
+    var url = CommunityAPIService.updateNoteURL + $scope.note._id;
+    $http({method: 'PUT', url: url, data:jdata, headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    }).
+      success(function(data, status, headers, config) {
+         console.log(data);
+         $location.path('/read');
+      }).
+      error(function(data, status, headers, config) {
+        console.log("fail");
+        });
+
+   };
 
 });

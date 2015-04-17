@@ -4,6 +4,36 @@
   </ion-nav-buttons>
 
   <ion-content class="has-header">
+  <form id="search" ng-submit="search(title)">
+    <label class="item item-input">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="text" ng-model="title" placeholder="Search Keywords">
+    </label>
+
+    <ul class="list">
+      <li class="item item-checkbox">
+        <label class="checkbox">
+          <input type="checkbox">
+        </label>
+        Notes
+      </li>
+    </ul>
+
+    <button type="submit" class="button button-full button-calm">
+      <i class="icon ion-ios7-search"></i>
+      Search
+    </button>
+  </form>
+  </ion-content>
+</ion-view>
+
+
+<!-- <ion-view title="Communities">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+
+  <ion-content class="has-header">
    <label class="item item-input">
     <i class="icon ion-search placeholder-icon"></i>
     <input type="text" placeholder="Search Keywords">
@@ -30,4 +60,4 @@
   Search
 </button>
   </ion-content>
-</ion-view>
+</ion-view> -->

@@ -21,7 +21,11 @@ angular.module('communityApp.home', [])
   $ionicPopup,
   localStorageService,
   $resource,
-  $location) {
+  $location,
+  $cordovaFileTransfer,
+  $cordovaFileOpener2,
+  $timeout,
+  $ionicLoading) {
 
   $scope.classlists = [
     { title: 'Science', id: 1 },
@@ -32,11 +36,13 @@ angular.module('communityApp.home', [])
     { title: 'Mathmatics', id: 6 },
     { title: 'Medicine', id: 7 }
   ];
-
+  
   $scope.subCategory = function(id){
+   
 
-      localStorageService.set("subCategoryId",id);
-      $location.path("/subCategory");
+    localStorageService.set("subCategoryId",id);
+    
+    $location.path("/subCategory");
   }
 
 });

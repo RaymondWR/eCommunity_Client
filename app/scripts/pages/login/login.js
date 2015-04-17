@@ -24,7 +24,9 @@ angular.module('communityApp.login', ['firebase'])
   $resource,
   CommunityAPIService,
   $firebase,
-  $firebaseAuth) {
+  $firebaseAuth,
+  $ionicSideMenuDelegate) {
+  $ionicSideMenuDelegate.canDragContent(false);
   var ref = new Firebase("https://blistering-heat-2084.firebaseio.com/");
 
   $scope.changefacebook = function() {

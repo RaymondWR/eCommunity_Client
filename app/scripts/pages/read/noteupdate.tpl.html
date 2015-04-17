@@ -1,15 +1,16 @@
 <ion-view title="Note">
+
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
 
-  <ion-content class="has-header" ng-controller="NoteCtrl">
+  <ion-content class="has-header" ng-controller="NoteUpdateCtrl">
   <form ng-submit="postNote()">
   <label class="item item-input item-select">
     <div class="input-label">
       Category
     </div>
-    <select name="category" ng-model="category">
+    <select name="category" ng-model="note.category">
       <option></option>
       <option>Science</option>
       <option>Software</option>
@@ -23,7 +24,7 @@
   <li class="item item-toggle">
      Public
      <label class="toggle toggle-assertive">
-       <input type="checkbox" ng-model="isPrivate">
+       <input type="checkbox" ng-model="note.isPrivate">
        <div class="track">
          <div class="handle"></div>
        </div>
@@ -31,11 +32,11 @@
   </li>
   <label class="item item-input">
     <span class="input-label">Note Title</span>
-    <input type="text" ng-model="title">
+    <input type="text" ng-model="note.title">
   </label>
   <label class="item item-input item-stacked-label">
     <span class="input-label">Content</span>
-    <textarea rows="6" ng-model="content"></textarea>
+    <textarea rows="6" ng-model="note.content" placeholder="Context"></textarea>
   </label>
   <button type="submit" class="button button-block button-calm">
       <i class="icon ion-plus-circled"></i>  Post Note

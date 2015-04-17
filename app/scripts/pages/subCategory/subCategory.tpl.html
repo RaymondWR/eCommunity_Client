@@ -1,4 +1,4 @@
-<ion-view title="Community">
+<ion-view title={{title}}>
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
@@ -7,11 +7,21 @@
   </ion-nav-buttons>
   <ion-content class="has-header">
     <ion-list>
-      <ion-item ng-repeat="note in notes" ng-click="readDetail(note)">
+      <ion-item ng-click="readDetail(note)" ng-repeat="note in notes" ng-show = "{{note.isPrivate}}">
         {{note.title}}
+        {{note.isPrivate}}
+        <!--  | filter : {note.isPrivate : false} -->
       </ion-item>
     </ion-list>
   </ion-content>
+ <div class="tabs tabs-icon-only">
+    <a class="tab-item" ng-click="home()">
+      <i class="icon ion-home"></i>
 
+    </a>
+      <a class="tab-item" ng-click="subscribe()">
+    <i class="icon ion-star"></i>
+    </a>
+</div>
 </ion-view>
 

@@ -25,7 +25,7 @@ communityApp.config(function($stateProvider, $locationProvider, $urlRouterProvid
 
   //No states are matched, use this as the fallback
   //$locationProvider.html5Mode(true);
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/login');
 
 });
 
@@ -35,7 +35,8 @@ communityApp.run(function($ionicPlatform,
   $rootScope,
   $cordovaSplashscreen) {
   $ionicPlatform.ready(function() {
-
+  var deviceInformation = ionic.Platform.platforms[0];
+  $rootScope.deviceInfo = deviceInformation;
     if (window.Connection) {
       if (navigator.connection.type == Connection.NONE) {
         $ionicPopup.confirm({
@@ -65,7 +66,10 @@ communityApp.controller('CommunityCtrl', function($scope) {
 
 });
 
-communityApp.controller('LayoutCtrl', function($scope,$location, $state) {
-
+communityApp.controller('LayoutCtrl', function($scope,$location, $state,localStorageService) {
+    $scope.logout = function(){
+        localStorageService.clearAll();
+        $location.path('/login');
+    }
 
 });

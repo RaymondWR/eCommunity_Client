@@ -166,12 +166,16 @@ gulp.task('html', function () {
 
 //Watch Files For Changes & Reload with public ip using browserSync.io
 gulp.task('serve', function(){
-  browserSync.init(null, {
+  browserSync({
     port: 3001,
     server: {
-      baseDir: Settings.SERVEFROM
+      baseDir: ['app', '.tmp'],
+      routes: {
+        '/bower_components': 'bower_components'
+      }
     },
-    notify: false
+    notify: false,
+    debugInfo: false
   });
   gulp.watch(['app/**/*.html'], ['preprocessDev'], reload);
   gulp.watch(['app/scripts/app.js'], ['preprocessJS'], reload);
